@@ -1,0 +1,16 @@
+@import 'vars';
+
+/* px to rem */
+@function rem($value) {
+	@return ($value / 10) + rem;
+}
+
+/* px to em */
+@function em($value, $fontsize: $g-fontsize) {
+	@return ($value / $fontsize) + em;
+}
+
+/* aspect-ratio */
+@function aspect-ratio($width, $height) {
+	@return ($height / $width) * 100%;
+}

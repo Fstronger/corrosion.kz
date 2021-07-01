@@ -1,0 +1,27 @@
+@import 'node_modules/slick-carousel/slick/slick.scss';
+
+.slick-slider {
+    display: none;
+    user-select: auto;
+
+    &.slick-initialized {
+        display: block;
+
+        & + .slick-loader {
+            display: none;
+        }
+    }
+}
+
+.slick-arrow {
+    position: absolute;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    z-index: 2;
+    outline: 0;
+    border: 0;
+
+    &.slick-disabled {
+        opacity: .5;
+    }
+}

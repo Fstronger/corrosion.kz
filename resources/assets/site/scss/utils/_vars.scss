@@ -1,0 +1,53 @@
+/* Paths */
+$path-images: '/site/images';
+$path-fonts: '/site/fonts';
+
+/* Fonts */
+$g-font: 'Roboto', sans-serif;
+$g-fontsize: 14;
+$g-textcolor: #000;
+$g-lineheight: 1.5;
+
+/* Customization Bootstrap vars from "bootstrap/scss/_variables.scss" */
+$grid-gutter-width: 30px;
+$gutter: $grid-gutter-width;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+
+$zindex-dropdown:       1000;
+$zindex-sticky:         1020;
+$zindex-fixed:          1030;
+$zindex-modal-backdrop: 1040;
+$zindex-modal:          1050;
+$zindex-popover:        1060;
+$zindex-tooltip:        1070;
+
+/* Colors */
+$g-color-primary: #F2994A;
+$g-color-white: #fff;
+$g-color-black: #000;
+$g-color-gray: #F2F2F2;
+
+
+
+
+
+
+
+
+
+
+
+
