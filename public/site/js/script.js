@@ -105,10 +105,83 @@ $("#closs-modal-application").click(function() {
   $("#modal-application-toggle").removeClass("hide");
 });
 
-$("#modal-thanks").click(function() {
-  $("#modal-thanks-toggle").toggleClass("hide");
-});
-$("#closs-modal-thanks").click(function() {
-  $("#modal-application-toggle").removeClass("hide");
-  $("#modal-thanks-toggle").removeClass("hide");
+// $("#modal-thanks").click(function() {
+//   $("#modal-thanks-toggle").toggleClass("hide");
+// });
+// $("#closs-modal-thanks").click(function() {
+//   $("#modal-application-toggle").removeClass("hide");
+//   $("#modal-thanks-toggle").removeClass("hide");
+// });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const $form = $('#modal-application-toggle');
+    const $success = $('#modal-thanks-toggle');
+
+    $form.on('submit', function(e) {
+        e.preventDefault();
+
+        const $name = $(this.name);
+        const $phone = $(this.phone);
+        const $organization = $(this.organization);
+        const $submit = $(this).find('.btn[type="submit"]');
+
+        removeFieldError($name);
+        removeFieldError($phone);
+        removeFieldError($organization);
+
+        // $submit.addClass('is-loading');
+
+        $.ajax({
+            url: '/' + window.site.locale + '/feedback',
+            type: 'POST',
+            async: true,
+            dataType: 'json',
+            data: {
+                _token: $('meta[name="_token"]').attr('content'),
+                name: $name.val(),
+                email: $email.val(),
+                message: $message.val()
+            },
+            success: function(data) {
+                if (data.success) {
+                    removeFieldError($name);
+                    removeFieldError($email);
+                    removeFieldError($message);
+
+                    $form[0].reset();
+                    $form.hide().parent().append(`<p>${data.success}</p>`);
+                } else {
+                    renderFieldError($name);
+                    renderFieldError($email);
+                    renderFieldError($message);
+                }
+            },
+            error: function(data) {
+                if (data.responseJSON.errors.name) {
+                    renderFieldError($name, data.responseJSON.errors.name[0]);
+                }
+                if (data.responseJSON.errors.email) {
+                    renderFieldError($email, data.responseJSON.errors.email[0]);
+                }
+                if (data.responseJSON.errors.message) {
+                    renderFieldError($message, data.responseJSON.errors.message[0]);
+                }
+            },
+            complete: function(data) {
+                $submit.removeClass('is-loading');
+            }
+        });
+
+    });
+
+    function renderFieldError($el, error = '') {
+        $el.closest('.form-field').addClass('has-error').find('.form-field__error').html(error);
+    }
+
+    function removeFieldError($el) {
+        $el.closest('.form-field').removeClass('has-error').find('.form-field__error').html('');
+    }
+
 });

@@ -30,6 +30,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
             Route::get('links/{alias}', 'LinksController@index')->name('site.links.index');
         });
 
+        Route::group(['namespace' => 'Feedback'], function () {
+            Route::post('feedback', 'FeedbackController@storeFeedback')->name('feedback');
+        });
+
     });
 
 });
