@@ -11,7 +11,7 @@ $("#showMenu").click(function() {
 
 var i=0;
 var image = document.getElementById("image");
-var imgs = ['site/img/icons/menu.png','site/img/icons/close.png'];
+var imgs = ['/site/img/icons/menu.png','/site/img/icons/close.png'];
 function imgsrc() {
     i++;
     i %= imgs.length;
@@ -24,8 +24,8 @@ $('.banner__slider').slick({
   arrows: true,
   dots: true,
   variableWidth:true,
-  prevArrow: `<div class="arrow-ellipse banner__slider-arrow banner__slider-arrow-left"><img src="site/img/icons/arrow-left.png" alt=""></div>`,
-  nextArrow: `<div class="arrow-ellipse banner__slider-arrow banner__slider-arrow-right"><img src="site/img/icons/arrow-right.png" alt=""></div>`,
+  prevArrow: `<div class="arrow-ellipse banner__slider-arrow banner__slider-arrow-left"><img src="/site/img/icons/arrow-left.png" alt=""></div>`,
+  nextArrow: `<div class="arrow-ellipse banner__slider-arrow banner__slider-arrow-right"><img src="/site/img/icons/arrow-right.png" alt=""></div>`,
 });
 
 $('.staff__slider').slick({
@@ -44,8 +44,8 @@ $('.projects__slider').slick({
   dots: true,
   centerMode:true,
   variableWidth:true,
-  prevArrow: `<div class="arrow-ellipse-2 projects__slider-arrow projects__slider-arrow-left"><img src="site/img/icons/arrow-left-2.png" alt=""></div>`,
-  nextArrow: `<div class="arrow-ellipse-2 projects__slider-arrow projects__slider-arrow-right"><img src="site/img/icons/arrow-right-2.png" alt=""></div>`,
+  prevArrow: `<div class="arrow-ellipse-2 projects__slider-arrow projects__slider-arrow-left"><img src="/site/img/icons/arrow-left-2.png" alt=""></div>`,
+  nextArrow: `<div class="arrow-ellipse-2 projects__slider-arrow projects__slider-arrow-right"><img src="/site/img/icons/arrow-right-2.png" alt=""></div>`,
 });
 
 
@@ -55,8 +55,8 @@ $('.reviews__slider').slick({
   dots: true,
   centerMode:true,
   variableWidth:true,
-  prevArrow: `<div class="arrow-ellipse-3 reviews__slider-arrow reviews__slider-arrow-left"><img src="site/img/icons/arrow-3.png" alt=""></div>`,
-  nextArrow: `<div class="arrow-ellipse-3 reviews__slider-arrow reviews__slider-arrow-right"><img src="site/img/icons/arrow-3.png" alt=""></div>`,
+  prevArrow: `<div class="arrow-ellipse-3 reviews__slider-arrow reviews__slider-arrow-left"><img src="/site/img/icons/arrow-3.png" alt=""></div>`,
+  nextArrow: `<div class="arrow-ellipse-3 reviews__slider-arrow reviews__slider-arrow-right"><img src="/site/img/icons/arrow-3.png" alt=""></div>`,
 });
 
 

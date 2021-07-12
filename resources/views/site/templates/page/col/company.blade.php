@@ -7,8 +7,8 @@
         <a href="/{{ app()->getLocale() }}/page/about" class="company__btn">Узнать больше <img src="/site/img/icons/big-btn-arrow-orange.png" alt=""></a>
     </div>
     <div class="company__img">
-        <img src="/site/img/company-img-1.png" alt="">
-        <img src="/site/img/bg-ellipse-1.png" class="bg-ellipse-ee" alt="">
-        <img src="/site/img/company-img-2.png" alt="">
+        @foreach($images as $image)
+            <img src="/{{ $image->link }}" alt="">
+        @endforeach
     </div>
 </div>

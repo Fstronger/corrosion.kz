@@ -26,7 +26,8 @@ trait PageTrait
 
       return view($template, [
           'text' => $text,
-          'section' => $section
+          'section' => $section,
+          'images' => (!is_null($section->page->images)) ? $section->page->images()->where('good', 1)->get() : null
       ])->render();
     }
     return false;

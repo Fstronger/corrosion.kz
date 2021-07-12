@@ -24,6 +24,7 @@ class CreateNewsTable extends Migration
                 $table->string('title_' . $lang->key)->nullable();
                 $table->text('short_' . $lang->key)->nullable();
                 $table->mediumText('full_' . $lang->key)->nullable();
+                $table->string('additionally_' . $lang->key)->nullable();
             }
 
             $table->integer('update_user')->nullable();

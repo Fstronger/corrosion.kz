@@ -66,24 +66,6 @@
                             </div>
                         </div>
                     @endif
-
-                    @if (!is_null($relations))
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label for="news_published_time">Автор</label>
-                                <select class="form-control" name="news_author_id">
-                                    <option value="0">Выберите автора</option>
-                                    @if ($relations['articles'] == true)
-                                        @foreach ($relations['authors'] as $author)
-                                            <option value="{{ $author->id }}" @if(old('news_author_id') == $author->id){{ 'selected' }}@endif>
-                                                {{ $author->title_ru ?? $author->title_kz ?? $author->title_en }}
-                                            </option>
-                                        @endforeach
-                                    @endif
-                                </select>
-                            </div>
-                        </div>
-                    @endif
                 </div>
 
                 <ul class="nav nav-tabs" role="tablist">
@@ -99,6 +81,7 @@
                     @foreach ($langs as $lang)
                         @php $name = 'title_' . $lang->key; @endphp
                         @php $good = 'good_' . $lang->key; @endphp
+                        @php $add = 'additionally_' . $lang->key; @endphp
                         @php $full = 'full_' . $lang->key; @endphp
                         @php $short = 'short_' . $lang->key; @endphp
                         @php $position = 'position_' . $lang->key; @endphp
@@ -122,8 +105,11 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-10 col-sm-11">
+                                        <div class="col-5 col-sm-6">
                                             {!! Form::text('news_title_' . $lang->key, null, ['class' => 'form-control', 'placeholder' => 'Название']) !!}
+                                        </div>
+                                        <div class="col-5 col-sm-5">
+                                            {!! Form::text('news_additionally_' . $lang->key, null, ['class' => 'form-control', 'placeholder' => 'Дополнительно']) !!}
                                         </div>
                                     </div>
 

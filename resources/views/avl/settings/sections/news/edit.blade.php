@@ -108,8 +108,11 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-10 col-sm-11">
+                                        <div class="col-5 col-sm-6">
                                             {!! Form::text('news_title_' . $lang->key, $new->{'title_' . $lang->key}, ['class' => 'form-control', 'placeholder' => 'Название']) !!}
+                                        </div>
+                                        <div class="col-5 col-sm-5">
+                                            {!! Form::text('news_additionally_' . $lang->key, $new->{'additionally_' . $lang->key}, ['class' => 'form-control', 'placeholder' => 'Название']) !!}
                                         </div>
                                     </div>
 

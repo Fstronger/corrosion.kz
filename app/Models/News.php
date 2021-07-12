@@ -118,6 +118,18 @@ class News extends Model
     /**
      * @param $value
      * @param null $lang
+     * @return mixed|null
+     */
+    public function getAdditionallyAttribute($value, $lang = null)
+    {
+        $additionally = (!is_null($lang)) ? $lang : $this->lang;
+
+        return ($this->{'additionally_' . $additionally}) ? $this->{'additionally_' . $additionally} : null;
+    }
+
+    /**
+     * @param $value
+     * @param null $lang
      * @return mixed
      */
     public function getShortAttribute($value, $lang = null)

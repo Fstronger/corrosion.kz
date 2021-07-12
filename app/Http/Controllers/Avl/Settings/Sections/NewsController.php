@@ -100,7 +100,9 @@ class NewsController extends AvlController
             $title_lang = 'title_' . $lang->key;
             $short_lang = 'short_' . $lang->key;
             $full_lang = 'full_' . $lang->key;
+            $add_lang = 'additionally_' . $lang->key;
 
+            $news->$add_lang = $post['news_' . $add_lang];
             $news->$good_lang = $post['news_' . $good_lang];
             $news->$title_lang = $post['news_' . $title_lang];
             $news->$short_lang = $post['news_' . $short_lang];
@@ -199,7 +201,9 @@ class NewsController extends AvlController
             $title_lang = 'title_' . $lang->key;
             $short_lang = 'short_' . $lang->key;
             $full_lang = 'full_' . $lang->key;
+            $add_lang = 'additionally_' . $lang->key;
 
+            $news->$add_lang = $post['news_' . $add_lang];
             $news->$good_lang = $post['news_' . $good_lang];
             $news->$title_lang = $post['news_' . $title_lang];
             $news->$short_lang = $post['news_' . $short_lang];

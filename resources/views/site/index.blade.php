@@ -60,7 +60,7 @@
 
 
     <section class="news">
-        {!! getNews('novosti') !!}
+        {!! getNews('news') !!}
     </section>
 
     <div id="modal-application-toggle" class="modal ">
