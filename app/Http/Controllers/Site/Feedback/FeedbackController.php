@@ -27,9 +27,9 @@ class FeedbackController extends Controller
 
             if ($feedback->save()) {
 
-                FeedbackMessage::dispatch($feedback->id);
+//                FeedbackMessage::dispatch($feedback->id);
 
-                return ['success' => __('form.feedback.success')];
+                return ['success' => 'Успешно отправлено'];
             }
         } catch (\Exception $exception) {
             Log::error('Ошибка при отправки сообщения.');

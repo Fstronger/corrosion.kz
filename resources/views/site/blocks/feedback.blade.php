@@ -8,9 +8,10 @@
                     Оставьте заявку на консультацию и наши специалисты <br>
                     ответят на интересующие Вас вопросы
                 </div>
-                <input type="text" name="name" placeholder="ФИО*">
-                <input type="text" name="phone" placeholder="Номер телефона*">
-                <input type="text" name="organization" placeholder="Название организации">
+                <input type="text" id="name" name="name" placeholder="ФИО*">
+                <input type="text" id="phone" name="phone" placeholder="Номер телефона*">
+                <input type="text" id="organization" name="organization" placeholder="Название организации">
+                <div id="contacts-error" class="text-danger mt-3" hidden></div>
                 <input type="submit" value="Онлайн заявка" id="modal-thanks" class="btn contacts__form-btn">
             </form>
         </div>

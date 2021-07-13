@@ -108,80 +108,65 @@ $("#closs-modal-application").click(function() {
 // $("#modal-thanks").click(function() {
 //   $("#modal-thanks-toggle").toggleClass("hide");
 // });
-// $("#closs-modal-thanks").click(function() {
-//   $("#modal-application-toggle").removeClass("hide");
-//   $("#modal-thanks-toggle").removeClass("hide");
-// });
+$("#closs-modal-thanks").click(function() {
+  $("#modal-application-toggle").removeClass("hide");
+  $("#modal-thanks-toggle").removeClass("hide");
+});
 
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const $form = $('#modal-application-toggle');
-    const $success = $('#modal-thanks-toggle');
+    var $form = $('#modal-application-toggle .contacts__form');
 
     $form.on('submit', function(e) {
         e.preventDefault();
 
-        const $name = $(this.name);
-        const $phone = $(this.phone);
-        const $organization = $(this.organization);
-        const $submit = $(this).find('.btn[type="submit"]');
+        var $name = $('#name');
+        var $phone = $('#phone');
+        var $organization = $('#organization');
+        var $submit = $(this).find('.btn[type="submit"]');
 
-        removeFieldError($name);
-        removeFieldError($phone);
-        removeFieldError($organization);
-
-        // $submit.addClass('is-loading');
+        $submit.attr('disabled', true);
 
         $.ajax({
-            url: '/' + window.site.locale + '/feedback',
+            url: '/ru/feedback',
             type: 'POST',
             async: true,
             dataType: 'json',
             data: {
                 _token: $('meta[name="_token"]').attr('content'),
                 name: $name.val(),
-                email: $email.val(),
-                message: $message.val()
+                phone: $phone.val(),
+                organization: $organization.val()
             },
             success: function(data) {
                 if (data.success) {
-                    removeFieldError($name);
-                    removeFieldError($email);
-                    removeFieldError($message);
-
                     $form[0].reset();
-                    $form.hide().parent().append(`<p>${data.success}</p>`);
-                } else {
-                    renderFieldError($name);
-                    renderFieldError($email);
-                    renderFieldError($message);
+                    $("#modal-application-toggle").removeClass('hide');
+                    $("#modal-thanks-toggle").addClass('hide');
                 }
+
+                $('#contacts-error').html('').attr('hidden');
             },
             error: function(data) {
+                var errors = '';
+
                 if (data.responseJSON.errors.name) {
-                    renderFieldError($name, data.responseJSON.errors.name[0]);
+                    errors += data.responseJSON.errors.name[0] + '<br>';
                 }
-                if (data.responseJSON.errors.email) {
-                    renderFieldError($email, data.responseJSON.errors.email[0]);
+                if (data.responseJSON.errors.phone) {
+                    errors += data.responseJSON.errors.phone[0] + '<br>';
                 }
-                if (data.responseJSON.errors.message) {
-                    renderFieldError($message, data.responseJSON.errors.message[0]);
+                if (data.responseJSON.errors.organization) {
+                    errors += data.responseJSON.errors.organization[0];
                 }
+
+                $('#contacts-error').html(errors).removeAttr('hidden');
             },
             complete: function(data) {
-                $submit.removeClass('is-loading');
+                $submit.removeAttr('disabled');
             }
         });
 
     });
-
-    function renderFieldError($el, error = '') {
-        $el.closest('.form-field').addClass('has-error').find('.form-field__error').html(error);
-    }
-
-    function removeFieldError($el) {
-        $el.closest('.form-field').removeClass('has-error').find('.form-field__error').html('');
-    }
-
 });
