@@ -5,11 +5,9 @@
     <section class="banner">
         <div class="banner__block container">
             <div class="banner__title">
-                Совершенствование <br>
-                системы диагностики <br>
-                противокоррозионной защиты
+                {!! __('translations.banner') !!}
             </div>
-            <a href="/{{ app()->getLocale() }}/links/services" class="btn banner__btn">Узнать больше <img src="/site/img/icons/big-btn-arrow-white.png" alt=""></a>
+            <a href="/{{ app()->getLocale() }}/links/services" class="btn banner__btn">{!! __('translations.banner_btn') !!} <img src="/site/img/icons/big-btn-arrow-white.png" alt=""></a>
             <div class="banner__slider">
                 {!! getLinks('services-col', null, true) !!}
             </div>
@@ -24,28 +22,28 @@
 
     <section class="activities">
         <div class="activities__block container">
-            <div class="activities__title">Сферы деятельности</div>
+            <div class="activities__title">{!! __('translations.activities.title') !!}</div>
             <div class="activities__gallery display_flex">
                 <div class="activities__gallery-item activities__gallery-item-1">
-                    <div class="activities-text">Ж/Д транспорт</div>
+                    <div class="activities-text">{!! __('translations.activities.item1') !!}</div>
                 </div>
                 <div class="display_flex_column">
                     <div class="activities__gallery-item activities__gallery-item-2">
-                        <div class="activities-text">Гражданское строительство</div>
+                        <div class="activities-text">{!! __('translations.activities.item2') !!}</div>
                     </div>
                     <div class="activities__gallery-item activities__gallery-item-3">
-                        <div class="activities-text">Судостроение и ремонт</div>
+                        <div class="activities-text">{!! __('translations.activities.item3') !!}</div>
                     </div>
                     <div class="activities__gallery-item activities__gallery-item-4">
-                        <div class="activities-text">Строительство мостов</div>
+                        <div class="activities-text">{!! __('translations.activities.item4') !!}</div>
                     </div>
                 </div>
                 <div class="display_flex_column">
                     <div class="activities__gallery-item activities__gallery-item-5">
-                        <div class="activities-text">Транспортировка нефти</div>
+                        <div class="activities-text">{!! __('translations.activities.item5') !!}</div>
                     </div>
                     <div class="activities__gallery-item activities__gallery-item-6">
-                        <div class="activities-text">Нефтегазовая промышленность</div>
+                        <div class="activities-text">{!! __('translations.activities.item6') !!}</div>
                     </div>
                 </div>
             </div>

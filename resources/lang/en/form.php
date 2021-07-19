@@ -7,12 +7,18 @@
 
 return [
     'feedback' => [
-        'title' => 'Обратная связь для жалоб и предложений',
-        'name' => 'Your name',
-        'email' => 'E-mail',
-        'message' => 'Message',
-        'send' => 'Send',
-        'success' => 'Thanks! Your message has been successfully sent.'
+        'contacts' => 'Our contacts',
+        'title' => 'Do you have any questions?',
+        'desc' => 'Leave a request for consultation and <br>
+                            our specialists will answer your questions',
+        'fio' => 'Full name*',
+        'phone' => 'Phone number*',
+        'organization' => 'Name of the organization',
+        'send' => 'Online application',
+        'success' => [
+            'title' => 'Thank you for your application,',
+            'desc' => 'Our specialist will contact you soon.'
+        ],
     ],
 
     'errors' => [
@@ -20,14 +26,5 @@ return [
         'name.max' => 'Имя не может быть больше :max символов',
 
         'phone.required' => 'Номер телефона не указан',
-//        'name.required' => 'Name not specified',
-//        'name.max' => 'Name cannot be more than :max characters',
-//
-//        'email.required' => 'E-mail not specified',
-//        'email.email' => 'Wrong e-mail address',
-//
-//        'message.required' => 'Message not specified',
-//        'message.min' => 'Message shall have more than :min characters',
-//        'message.max' => 'Message shall have less than :max characters',
     ]
 ];

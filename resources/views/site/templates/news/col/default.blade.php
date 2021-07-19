@@ -3,7 +3,7 @@
         <div class="news__head">
             <div class="news__title">{{ $section->name }}</div>
             <div class="news__block-btn">
-                <a href="{{ $section->path }}" class="news__btn">Все новости <img src="/site/img/icons/small-btn-arrow-orange.png" alt=""></a>
+                <a href="{{ $section->path }}" class="news__btn">{!! __('translations.all_news') !!} <img src="/site/img/icons/small-btn-arrow-orange.png" alt=""></a>
             </div>
         </div>
         <div class="news__items">

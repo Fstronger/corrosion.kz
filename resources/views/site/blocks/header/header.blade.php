@@ -22,7 +22,7 @@
                         </a>
                     </div>
                 </div>
-                <a href="#" id="modal-application" class="btn header-desctop__head-btn">Онлайн заявка</a>
+                <a href="#" id="modal-application" class="btn header-desctop__head-btn">{!! __('form.feedback.send') !!}</a>
             </div>
         </div>
     </div>
@@ -47,7 +47,7 @@
         <div class="container">
             <div class="">
 
-                <a href="#" id="modal-application" class="btn header-mobile__menu-btn">Онлайн заявка</a>
+                <a href="#" id="modal-application" class="btn header-mobile__menu-btn">{!! __('form.feedback.send') !!}</a>
             </div>
             <a href="" class="header-mobile__menu-phone">
                 <img src="/site/img/icons/phone.png" alt="">

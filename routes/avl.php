@@ -65,6 +65,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Avl'], function () {
             Route::resource('templates', 'TemplatesController', ['as' => 'admin.settings']);
             Route::resource('sections', 'SectionsController', ['as' => 'admin.settings']);
             Route::resource('profile', 'ProfileController');
+            Route::get('feedbacks', 'FeedbackController@index')->name('admin.settings.feedback');
 
             Route::group(['namespace' => 'Configurations'], function () {
                 Route::get('sections/configuration/{id}', 'SectionsController@index')->name('admin.settings.sections.configuration');

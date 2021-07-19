@@ -12,13 +12,26 @@ return [
 	'page_next' => 'Next',
     'back' => 'Back',
     'site_map' => 'Site Map',
+    'banner' => 'Improving anticorrosive  <br>
+                protection diagnostics system',
+    'banner_btn' => 'To learn more',
+    'banner_item_btn' => 'Learn more',
+    'activities' => [
+        'title' => 'Areas of activity',
+        'item1' => 'Railway transport',
+        'item2' => 'Civil Engineering',
+        'item3' => 'Shipbuilding and repair',
+        'item4' => 'Construction of bridges',
+        'item5' => 'Transportation of oil',
+        'item6' => 'Oil and gas industry',
+    ],
+    'all_news' => 'All news',
+    'footer' => [
+        'company' => '© 2020 - 2021 LLP «NR&PC «Corrosion Protection»',
+        'policy' => 'Privacy Policy'
+    ],
 
 	'404' => [
 		'title' => 'Wrong address or the page no longer exists <br> <a href="/'. LaravelLocalization::getCurrentLocale() .'/">Go back to home page</a>',
 	],
-
-    'footer' => [
-        'copyright' => '© '. date('Y') .' ',
-        'dev' => 'Developed by <a class="link link--blue-2" href="http://www.ir.kz" target="_blank" title="Developed by Internet Solutions - creation and support of websites, creation of annual reports (website development in Kazakhstan, development of the websites of Nur-Sultan, Almaty, creation of the websites of Nur-Sultan, Almaty, creation of annual reports in Nur-Sultan)">Internet Solutions</a>',
-    ]
 ];

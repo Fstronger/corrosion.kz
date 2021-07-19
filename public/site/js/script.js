@@ -169,4 +169,58 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
     });
+
+    var $form_contacts = $('#contacts__block .contacts__form');
+
+    $form_contacts.on('submit', function(e) {
+        e.preventDefault();
+
+        var $name = $('#name');
+        var $phone = $('#phone');
+        var $organization = $('#organization');
+        var $submit = $(this).find('.btn[type="submit"]');
+
+        $submit.attr('disabled', true);
+
+        $.ajax({
+            url: '/ru/feedback',
+            type: 'POST',
+            async: true,
+            dataType: 'json',
+            data: {
+                _token: $('meta[name="_token"]').attr('content'),
+                name: $name.val(),
+                phone: $phone.val(),
+                organization: $organization.val()
+            },
+            success: function(data) {
+                if (data.success) {
+                    $form[0].reset();
+                    $("#modal-application-toggle").removeClass('hide');
+                    $("#modal-thanks-toggle").addClass('hide');
+                }
+
+                $('#contacts-error').html('').attr('hidden');
+            },
+            error: function(data) {
+                var errors = '';
+
+                if (data.responseJSON.errors.name) {
+                    errors += data.responseJSON.errors.name[0] + '<br>';
+                }
+                if (data.responseJSON.errors.phone) {
+                    errors += data.responseJSON.errors.phone[0] + '<br>';
+                }
+                if (data.responseJSON.errors.organization) {
+                    errors += data.responseJSON.errors.organization[0];
+                }
+
+                $('#contacts-error').html(errors).removeAttr('hidden');
+            },
+            complete: function(data) {
+                $submit.removeAttr('disabled');
+            }
+        });
+
+    });
 });
