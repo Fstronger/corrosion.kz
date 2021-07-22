@@ -13,4 +13,9 @@ class IndexController extends BaseController
             'indexPage' => true
         ]);
     }
+
+    public function notFound()
+    {
+        return view('errors.404');
+    }
 }

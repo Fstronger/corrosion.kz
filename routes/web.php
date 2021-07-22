@@ -18,6 +18,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     Route::group(['namespace' => 'Site'], function () {
         Route::get('/', 'IndexController@index')->name('site.home');
 
+        Route::get('/404', 'IndexController@notFound')->name('site.notFound');
+
         Route::group(['namespace' => 'Sections'], function () {
             Route::get('page/{alias}', 'PageController@index');
 
