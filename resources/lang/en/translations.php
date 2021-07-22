@@ -32,6 +32,6 @@ return [
     ],
 
 	'404' => [
-		'title' => 'Wrong address or the page no longer exists <br> <a href="/'. LaravelLocalization::getCurrentLocale() .'/">Go back to home page</a>',
+		'title' => 'Wrong address or the page no longer exists <br> <p class="mt-4"><a style="color: #F2672E;" href="/'. LaravelLocalization::getCurrentLocale() .'/">Go back to home page</a></p>',
 	],
 ];

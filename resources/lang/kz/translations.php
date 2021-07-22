@@ -33,6 +33,6 @@ return [
     ],
 
 	'404' => [
-		'title' => 'Мекенжай дұрыс терілмеген немесе сайтта мұндай бет енді жоқ <br> <a href="/'. LaravelLocalization::getCurrentLocale() .'/">Басты бетке кері қайту</a>',
+		'title' => 'Мекенжай дұрыс терілмеген немесе сайтта мұндай бет енді жоқ <br> <p class="mt-4"><a style="color: #F2672E;" href="/'. LaravelLocalization::getCurrentLocale() .'/">Басты бетке кері қайту</a></p>',
 	],
 ];

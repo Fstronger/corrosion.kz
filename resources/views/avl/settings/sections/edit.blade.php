@@ -81,17 +81,6 @@
                             <span class="switch-handle"></span>
                         </label>
                     </li>
-
-                    @if(in_array($section->type, ['news']))
-                        <li class="list-group-item">
-                            <label class="mb-0">В рассылке</label>
-                            <label class="switch switch-3d switch-primary pull-right mb-0">
-                                {!! Form::checkbox('section_subscribe', '1', $section->subscribe ?? null,  ['class' => 'switch-input']) !!}
-                                <span class="switch-label"></span>
-                                <span class="switch-handle"></span>
-                            </label>
-                        </li>
-                    @endif
                 </ul>
 
                 <div class="form-group">

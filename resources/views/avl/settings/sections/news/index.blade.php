@@ -44,9 +44,9 @@
                             @foreach($langs as $lang)
                                 <th class="text-center" style="width: 40px">{{ $lang->key }}</th>
                             @endforeach
-                            @if ($section->alias == 'news')
-                                <th class="text-center" style="width: 20px"><i class="fa fa-check-circle-o"></i></th>
-                            @endif
+{{--                            @if ($section->alias == 'news')--}}
+{{--                                <th class="text-center" style="width: 20px"><i class="fa fa-check-circle-o"></i></th>--}}
+{{--                            @endif--}}
                             <th class="text-center">Наименование новости</th>
                             @if($section->rubric == 1)
                                 <th class="text-center" style="width: 160px;">Рубрика</th>
@@ -65,13 +65,13 @@
                                                 class="fa fa-eye"></i>@else <i class="fa fa-eye-slash"></i> @endif</a>
                                     </td>
                                 @endforeach
-                                @if ($section->alias == 'news')
-                                    <td class="text-center" style="width: 20px">
-                                        <a class="change--fixed" href="#" data-id="{{ $new->id }}">
-                                            <i class="fa @if ($new->fixed){{ 'fa-check-circle-o' }}@else{{ 'fa-circle-o' }}@endif"></i>
-                                        </a>
-                                    </td>
-                                @endif
+{{--                                @if ($section->alias == 'news')--}}
+{{--                                    <td class="text-center" style="width: 20px">--}}
+{{--                                        <a class="change--fixed" href="#" data-id="{{ $new->id }}">--}}
+{{--                                            <i class="fa @if ($new->fixed){{ 'fa-check-circle-o' }}@else{{ 'fa-circle-o' }}@endif"></i>--}}
+{{--                                        </a>--}}
+{{--                                    </td>--}}
+{{--                                @endif--}}
                                 <td>
                                     <b>{{ str_limit($new->title_ru ?? $new->title_kz ?? $new->title_en ?? '', 150) }}</b>
                                     <br/><span class="text-secondary">{{ str_limit(strip_tags($new->short_ru ?? $new->short_kz ?? $new->short_en), 300) }}</span>

@@ -5,9 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate">
-    <meta name="description" content="{{ strip_tags($settings['description']) }}">
-    <meta name="author" content="">
-    <meta name="keyword" content="{{ strip_tags($settings['keywords']) }}">
+
+    @if(isset($section))
+        @if(!is_null($section->configuration))
+            <meta name="description" content="{{ strip_tags($section->configuration->description) }}">
+            <meta name="author" content="VLADIMIR GRUZDEV">
+            <meta name="keyword" content="{{ strip_tags($section->configuration->keywords) }}">
+        @else
+            <meta name="description" content="{{ strip_tags($settings['description']) }}">
+            <meta name="author" content="VLADIMIR GRUZDEV">
+            <meta name="keyword" content="{{ strip_tags($settings['keywords']) }}">
+        @endif
+    @else
+        <meta name="description" content="{{ strip_tags($settings['description']) }}">
+        <meta name="author" content="VLADIMIR GRUZDEV">
+        <meta name="keyword" content="{{ strip_tags($settings['keywords']) }}">
+    @endif
+
     <meta name="_token" content="{{ csrf_token() }}">
     @php
         $sectionTitle = '';

@@ -33,6 +33,6 @@ return [
     ],
 
 	'404' => [
-		'title' => 'Неправильно набран адрес или такой страницы на сайте больше не существует <br> <a href="/'. LaravelLocalization::getCurrentLocale() .'/">Вернуться на главную</a>',
+		'title' => 'Неправильно набран адрес или такой страницы на сайте больше не существует <br> <p class="mt-4"><a style="color: #F2672E;" href="/'. LaravelLocalization::getCurrentLocale() .'/">Вернуться на главную</a></p> ',
 	],
 ];
