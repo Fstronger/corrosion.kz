@@ -7,20 +7,7 @@
             </div>
             <div class="header-desctop__head-content">
                 <div class="btn-group">
-                    <a href="" class="header-desctop__btn-dropdown">
-                        <img src="/site/img/icons/phone.png" class="header-desctop__head-phone" alt="">
-                        + 7 701 527 60 90
-                    </a>
-                    <button type="button" class="header-desctop__btn-dropdown dropdown-toggle-split" id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
-                        <img src="/site/img/icons/arrow-down.png"class="header-desctop__head-dropbtn"alt="">
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-phone" aria-labelledby="dropdownMenuReference">
-                        <div class="cub"></div>
-                        <a href="" class="dropdown-item">
-                            <img src="/site/img/icons/phone.png" class="header-desctop__head-phone" alt="">
-                            + 7 701 527 60 90
-                        </a>
-                    </div>
+                    {!! getLinks('kontakty-block-header', 'contacts-header') !!}
                 </div>
                 <a href="#" id="modal-application" class="btn header-desctop__head-btn">{!! __('form.feedback.send') !!}</a>
             </div>
@@ -47,16 +34,9 @@
         <div class="container">
             <div class="">
 
-                <a href="#" id="modal-application" class="btn header-mobile__menu-btn">{!! __('form.feedback.send') !!}</a>
+                <a href="#" id="modal-application-mobile" class="btn header-mobile__menu-btn">{!! __('form.feedback.send') !!}</a>
             </div>
-            <a href="" class="header-mobile__menu-phone">
-                <img src="/site/img/icons/phone.png" alt="">
-                + 7 701 527 60 90
-            </a>
-            <a href="" class="header-mobile__menu-phone">
-                <img src="/site/img/icons/phone.png" alt="">
-                + 7 701 527 60 90
-            </a>
+            {!! getLinks('kontakty-block-header', 'contacts-header-mobile') !!}
             @include('site.blocks.nav-mobile')
             @include('site.blocks.header.header-langs-mobile')
         </div>

@@ -101,6 +101,9 @@ $("#active-img-id-6").click(function() {
 $("#modal-application").click(function() {
   $("#modal-application-toggle").toggleClass("hide");
 });
+$("#modal-application-mobile").click(function() {
+  $("#modal-application-toggle").toggleClass("hide");
+});
 $("#closs-modal-application").click(function() {
   $("#modal-application-toggle").removeClass("hide");
 });
