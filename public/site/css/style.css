@@ -1113,6 +1113,10 @@ li {
   margin-left: 29px;
 }
 
+.footer__head-content-info a {
+  color: #FFFFFF;
+}
+
 .content-menu {
   padding-top: 38px;
 }

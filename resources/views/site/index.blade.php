@@ -24,27 +24,39 @@
         <div class="activities__block container">
             <div class="activities__title">{!! __('translations.activities.title') !!}</div>
             <div class="activities__gallery display_flex">
-                <div class="activities__gallery-item activities__gallery-item-1">
-                    <div class="activities-text">{!! __('translations.activities.item1') !!}</div>
+                <a href="/{{ app()->getLocale() }}/page/railway-transport">
+                    <div class="activities__gallery-item activities__gallery-item-1">
+                        <div class="activities-text">{!! __('translations.activities.item1') !!}</div>
+                    </div>
+                </a>
+                <div class="display_flex_column">
+                    <a href="/{{ app()->getLocale() }}/page/grazhdanskoe-stroitelstvo">
+                        <div class="activities__gallery-item activities__gallery-item-2">
+                            <div class="activities-text">{!! __('translations.activities.item2') !!}</div>
+                        </div>
+                    </a>
+                    <a href="/{{ app()->getLocale() }}/page/sudostroenie-i-remont">
+                        <div class="activities__gallery-item activities__gallery-item-3">
+                            <div class="activities-text">{!! __('translations.activities.item3') !!}</div>
+                        </div>
+                    </a>
+                    <a href="/{{ app()->getLocale() }}/page/stroitelstvo-mostov">
+                        <div class="activities__gallery-item activities__gallery-item-4">
+                            <div class="activities-text">{!! __('translations.activities.item4') !!}</div>
+                        </div>
+                    </a>
                 </div>
                 <div class="display_flex_column">
-                    <div class="activities__gallery-item activities__gallery-item-2">
-                        <div class="activities-text">{!! __('translations.activities.item2') !!}</div>
-                    </div>
-                    <div class="activities__gallery-item activities__gallery-item-3">
-                        <div class="activities-text">{!! __('translations.activities.item3') !!}</div>
-                    </div>
-                    <div class="activities__gallery-item activities__gallery-item-4">
-                        <div class="activities-text">{!! __('translations.activities.item4') !!}</div>
-                    </div>
-                </div>
-                <div class="display_flex_column">
-                    <div class="activities__gallery-item activities__gallery-item-5">
-                        <div class="activities-text">{!! __('translations.activities.item5') !!}</div>
-                    </div>
-                    <div class="activities__gallery-item activities__gallery-item-6">
-                        <div class="activities-text">{!! __('translations.activities.item6') !!}</div>
-                    </div>
+                    <a href="/{{ app()->getLocale() }}/page/transportirovka-nefti">
+                        <div class="activities__gallery-item activities__gallery-item-5">
+                            <div class="activities-text">{!! __('translations.activities.item5') !!}</div>
+                        </div>
+                    </a>
+                    <a href="/{{ app()->getLocale() }}/page/neftegazovaya-promyshlennost">
+                        <div class="activities__gallery-item activities__gallery-item-6">
+                            <div class="activities-text">{!! __('translations.activities.item6') !!}</div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

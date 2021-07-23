@@ -16,7 +16,7 @@
                 @if($loop->iteration & 1 )
                     <div class="projects__content">
                         <div class="projects__info">
-                            <h3>{{ $record->title }}</h3>
+                            <h3><a style="font-weight: bold; font-size: 24px;" href="{{ $record->url }}">{{ $record->title }}</a></h3>
                             {{--                        <p>{{ str_limit(strip_tags($record->short), 500) }}</p>--}}
                             <p>{{ strip_tags($record->short) }}</p>
                         </div>
@@ -52,7 +52,7 @@
                             </div>
                         @endforeach
                         <div class="projects__info">
-                            <h3>{{ $record->title }}</h3>
+                            <h3><a style="font-weight: bold; font-size: 24px;" href="{{ $record->url }}">{{ $record->title }}</a></h3>
                             <p>{{ strip_tags($record->short) }}</p>
                         </div>
                     </div>

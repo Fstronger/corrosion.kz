@@ -14,7 +14,7 @@
                 {!! __('translations.footer.company') !!}
             </div>
             <div class="footer__bottom-content">
-                {!! __('translations.footer.policy') !!}
+                <a style="color: #777777;" href="/{{app()->getLocale()}}/page/privacy-policy">{!! __('translations.footer.policy') !!}</a>
             </div>
             <div class="footer__bottom-content">
                 <img src="/site/img/logo-IM.png" alt="">
